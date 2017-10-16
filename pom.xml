@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>uk.gov.ons.ctp.product</groupId>
   <artifactId>rm-common-config</artifactId>
-  <version>10.49.4-SNAPSHOT</version>
+  <version>10.49.4</version>
   <packaging>pom</packaging>
   <name>CTP SDC Dependencies</name>
   <description>CTP SDC Dependencies</description>
