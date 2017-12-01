@@ -1,0 +1,30 @@
+language: java
+jdk: openjdk8
+
+before_install:
+  # Checkout master branch not commit on master builds
+  - if [ "$TRAVIS_BRANCH" == "master" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
+    git checkout $TRAVIS_BRANCH;
+    fi
+  - cp .travis.settings.xml $HOME/.m2/settings.xml
+  - curl ifconfig.co|xargs echo "Travis IP address is ";
+
+after_success:
+  # Only release on master builds
+  - if [ "$TRAVIS_BRANCH" == "master" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
+    git config --global set user.email "travis@travis-ci.org";
+    git config --global set user.name "Travis CI";
+    mvn -B -Dusername=$GITHUB_API_KEY release:prepare;
+    mvn -B release:perform;
+    fi
+
+notifications:
+  slack:
+    rooms:
+      secure: GGqPaAVQYYZCbaxniiYoTq0hHKREOTo7EGQdY6atk3P+VPIH9Qv7iiylpf95CiVZ8y6+HGz7CtE0X6UjpnYbGsgW6duSpmggN8y9n3GsabxKrzJ7vv1GrLLi8MObh7lGdXqMZReWNgbcTDvRsg3gH6S1KGN/hNZ18Dcn2WVk+igHDt7Ct0BRJeBQgpQKzyj8sxNyBYoJsKeXpUbXJcj0TprJ44i1IIKhrQ+hnHEbaysQ3PJmK/t1ugwantk7IViZEXfrK+IcZ8TUVqgzMc2SD205jeLeMYalJLK+mqYMvADSRAnVV0pQwvQB0HViw22iLdcWpOwdc0F9Nzo9Rq/7B6JGSTH3n/sCawrjV7mE2wHR8/q0NVmCnJvo6+uxI7NU9b+J/1j83UQuOyFGOYaqFylNZsuLudE12wn9FmrZHNEbINQ8COc8fps3LadFCBuO75n1po+fsb8TNleSB9VHHA2pCBnGnkuMVRioMj1yUjcmJZZMjCXtKB7ndNBaf/qZjigmylvXL8OIA1TbvwMW6amFZqBD9iv8mVAP4GjeKRnCx/xEu7WzefMcCHLDFjPmfud6qP8AZwPXFIvU9D7W566P0THJBvk99rzDtBj2nYe+CHpTalNDepT4NPoKftKHA2g6pIUZUw7zgaC4zeqL+idK5eVEu5IDieonRIE9efs=
+    on_failure: always
+    on_success: never
+
+cache:
+  directories:
+  - $HOME/.m2
