@@ -29,111 +29,9 @@
   </scm>
 
   <properties>
-    <springboot.version>1.5.6.RELEASE</springboot.version>
-    <springcloud.version>Dalston.SR1</springcloud.version>
-    <common.version>10.49.4</common.version>
-    <java.version>1.8</java.version>
-    <orika.version>1.5.1</orika.version>
-    <surefire.version>2.20</surefire.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
   </properties>
-
-  <dependencyManagement>
-    <dependencies>
-      <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-dependencies</artifactId>
-        <version>${springboot.version}</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-
-      <dependency>
-        <groupId>org.springframework.cloud</groupId>
-        <artifactId>spring-cloud-dependencies</artifactId>
-        <version>${springcloud.version}</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-
-      <dependency>
-        <groupId>uk.gov.ons.ctp.common</groupId>
-        <artifactId>framework</artifactId>
-        <version>${common.version}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>ma.glasnost.orika</groupId>
-        <artifactId>orika-core</artifactId>
-        <version>${orika.version}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>ma.glasnost.orika</groupId>
-        <artifactId>orika-eclipse-tools</artifactId>
-        <version>${orika.version}</version>
-      </dependency>
- 
-      <dependency>
-        <groupId>net.logstash.logback</groupId>
-        <artifactId>logstash-logback-encoder</artifactId>
-        <version>4.11</version>
-      </dependency>
-
-      <dependency>
-        <groupId>org.redisson</groupId>
-        <artifactId>redisson</artifactId>
-        <version>3.2.0</version>
-      </dependency>
-
-      <dependency>
-        <groupId>io.springfox</groupId>
-        <artifactId>springfox-swagger2</artifactId>
-        <version>2.7.0</version>
-      </dependency>
-
-      <dependency>
-        <groupId>io.springfox</groupId>
-        <artifactId>springfox-swagger-ui</artifactId>
-        <version>2.7.0</version>
-      </dependency>
-
-      <dependency>
-        <groupId>net.sourceforge.cobertura</groupId>
-        <artifactId>cobertura</artifactId>
-        <version>2.1.1</version>
-      </dependency>
-
-      <dependency>
-        <groupId>net.codesup.util</groupId>
-        <artifactId>jaxb2-rich-contract-plugin</artifactId>
-        <version>1.18.0</version>
-      </dependency>
-
-      <dependency>
-        <groupId>org.apache.commons</groupId>
-        <artifactId>commons-csv</artifactId>
-        <version>1.4</version>
-      </dependency>
-
-
-      <dependency>
-        <groupId>org.testng</groupId>
-        <artifactId>testng</artifactId>
-        <version>6.11</version>
-        <scope>test</scope>
-      </dependency>
-
-      <dependency>
-        <groupId>uk.gov.ons.ctp.common</groupId>
-        <artifactId>test-framework</artifactId>
-        <version>${common.version}</version>
-        <scope>test</scope>
-      </dependency>
-
-    </dependencies>
-  </dependencyManagement>
 
   <build>
     <pluginManagement>
@@ -221,11 +119,6 @@
               <item>timestamp</item>
             </items>
           </configuration>
-        </plugin>
-        <plugin>
-          <groupId>org.springframework.boot</groupId>
-          <artifactId>spring-boot-maven-plugin</artifactId>
-          <version>${springboot.version}</version>
         </plugin>
         <plugin>
           <groupId>org.jvnet.jaxb2.maven2</groupId>
