@@ -171,17 +171,17 @@
           </dependencies>
           <executions>
             <execution>
-              <id>test</id>
+              <id>checkstyle</id>
               <phase>test</phase>
-              <configuration>
-                <configLocation>https://raw.githubusercontent.com/ONSdigital/rm-common-config/master/checkstyle/checkstyle.xml</configLocation>
-                <encoding>UTF-8</encoding>
-                <consoleOutput>true</consoleOutput>
-                <failsOnError>true</failsOnError>
-              </configuration>
               <goals>
                 <goal>check</goal>
               </goals>
+              <configuration>
+                <configLocation>https://raw.githubusercontent.com/ONSdigital/rm-common-config/master/checkstyle/ons-checkstyle-config.xml</configLocation>
+                <encoding>UTF-8</encoding>
+                <consoleOutput>true</consoleOutput>
+                <violationSeverity>info</violationSeverity>
+              </configuration>
             </execution>
           </executions>
         </plugin>
