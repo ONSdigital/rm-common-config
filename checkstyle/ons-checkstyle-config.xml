@@ -214,5 +214,11 @@
       <property name="exceptionVariableName" value="expected"/>
     </module>
     <module name="CommentsIndentation"/>
+    <!-- Ignore checkstyle with: // CHECKSTYLE IGNORE check FOR NEXT 1 LINES -->
+    <module name="SuppressWithNearbyCommentFilter">
+      <property name="commentFormat" value="CHECKSTYLE IGNORE (\w+) FOR NEXT (\d+) LINES"/>
+      <property name="checkFormat" value="$1"/>
+      <property name="influenceFormat" value="$2"/>
+    </module>
   </module>
 </module>
