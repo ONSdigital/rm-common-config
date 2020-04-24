@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>uk.gov.ons.ctp.product</groupId>
   <artifactId>rm-common-config</artifactId>
-  <version>10.49.14-SNAPSHOT</version>
+  <version>11.0.0-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>CTP SDC Dependencies</name>
   <description>CTP SDC Dependencies</description>
@@ -13,13 +13,6 @@
     <name>UK Office For National Statistics</name>
     <url>http://ons.gov.uk</url>
   </organization>
-
-  <licenses>
-    <license>
-      <name>MIT License</name>
-      <url>http://www.opensource.org/licenses/mit-license.php</url>
-    </license>
-  </licenses>
 
   <scm>
     <url>https://github.com/ONSdigital/rm-common-config</url>
@@ -31,7 +24,7 @@
   <properties>
     <springboot.version>1.5.6.RELEASE</springboot.version>
     <springcloud.version>Dalston.SR1</springcloud.version>
-    <common.version>10.49.4</common.version>
+    <common.version>11.0.0-SNAPSHOT</common.version>
     <java.version>1.8</java.version>
     <orika.version>1.5.1</orika.version>
     <surefire.version>2.20</surefire.version>
